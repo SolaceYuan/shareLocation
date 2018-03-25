@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingBottom="50dp"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <RelativeLayout android:id="@+id/top"
+        android:layout_width="fill_parent"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="wrap_content">
+
+        <Button android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="搜索"/>
+
+        <RelativeLayout android:id="@+id/rlSearchFrameDelete"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_toLeftOf="@id/btnSearch">
+
+            <EditText android:id="@+id/etSearch"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ed_border"
+                android:paddingLeft="32dp"
+                android:textSize="25sp"
+                android:hint="输入手机号。。。"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/list_item"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

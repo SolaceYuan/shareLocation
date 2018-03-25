@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gddisplaymap">
+
+    <!-- 允许程序打开网络套接字 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 定位 -->
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 允许程序设置内置sd卡的写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许程序获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许程序访问WiFi网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 允许程序读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 控制呼吸灯，振动器等，用于新消息提醒 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 外置存储存取权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 多媒体相关 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <permission
+        android:name="com.netease.nim.demo.permission.RECEIVE_MSG"
+        android:protectionLevel="signature" />
+    <!-- 接收 SDK 消息广播权限， 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
+    <uses-permission android:name="com.gddisplaymap.permission.RECEIVE_MSG" />
+
+    <application
+        android:name="cn.tools.MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/launch_icon"
+        android:label="位置共享"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name="cn.ui.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 高德地图开发key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="a15141221726fac71fd77ac6197c6918" />
+        <!-- 网易云开发key -->
+        <!-- <meta-data -->
+        <!-- android:name="com.netease.nim.appKey" -->
+        <!-- android:value="bded530007bf428498a04c8c031d8df3" /> -->
+
+
+        <!-- 定位需要的服务 -->
+        <service android:name="com.amap.api.location.APSService" />
+
+        <activity android:name="cn.ui.HomeActivity" />
+        <activity
+            android:name="cn.ui.RegisterActivity"
+            android:label="注册"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="cn.ui.UserInfoActivity"
+            android:label="个人信息"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="cn.ui.SearchActivity"
+            android:label="添加好友"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="cn.ui.loginActivity"
+            android:label="登录"
+            android:theme="@style/AppTheme" />
+        <activity android:name="cn.ui.MessageActivity"
+            android:label="未读消息"
+            android:theme="@style/AppTheme" ></activity>
+        <activity android:name="cn.ui.FriendsActivity"
+            android:label="我的好友"
+            android:theme="@style/AppTheme" ></activity>
+    </application>
+
+</manifest>
